@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FaceeBookk</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+</head>
+
+
+
+<body>
+
+    <!--   ........ Start Navbar .......-->
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <h3>Facee<span>Bookee</span></h3>
+            </div>
+            <div class="search-bar">
+                <i class="fa fa-search"></i>
+                <input type="search" placeholder="Search For Creaters...">
+            </div>
+            <form class="add-post" action="/addingpost" method="post" enctype="multipart/form-data">
+                <label for="add-post" class="btn btn-primary mini-button">Add Post</label>
+                <div class="profile-picture" id="my-profile-picture">
+                    <img src="img/{{user.imageName}}">
+                </div>
+            </form>
+        </div>
+    </nav>
+    <!--    ..................START MAIN SECTION...................-->
+    <main>
+        <div class="container main-container">
+            <!-- ...............MAIN LEFT...........-->
+            <div class="main-left">
+                <a class="profile">
+                    <div class="profile-picture" id="my-profile-picture">
+                        <img src="img/{{user.imageName}}">
+                    </div>
+                    <div class="profile-handle">
+                        <h4>{{user.firstname}} {{user.lastname}}</h4>
+                        <p class="text-gry">@{{user.firstname}}{{user.lastname}}</p>
+                    </div>
+                </a>
+
+                <!-- ........SIDE BAR.............-->
+                <aside>
+                    <a class="menu-item">
+                        <span><img src="icon/homee.png"></span>
+                        <h3>Home</h3>
+                    </a>
+                    <a class="menu-item ">
+                        <span><img src="icon/joystick.png"></span>
+                        <h3>Explore</h3>
+                    </a>
+                    <a class="menu-item" id="notifice">
+                        <span><img src="icon/bell.png"></span>
+                        <small class="notfy-count nt" id="ntcount1">7+</small>
+                        <h3>Notification</h3>
+                        <!--    .....................notification...............-->
+                        <div class="notification-box">
+                            <div>
+                                <div class="profile-picture">
+                                    <img src="img/story6.jpg" alt="">
+                                </div>
+                                <div class="notification-body">
+                                    <b>melody jas</b>accepted your friend request
+                                    <small class="text-gry" 1 minutes ago></small>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="profile-picture">
+                                    <img src="img/story3.jpg" alt="">
+                                </div>
+                                <div class="notification-body">
+                                    <b>jhon lew</b>comment your post
+                                    <small class="text-gry" 4 minutes ago></small>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="profile-picture">
+                                    <img src="img/story4.jpg" alt="">
+                                </div>
+                                <div class="notification-body">
+                                    <b>Harry </b>liked your post
+                                    <small class="text-gry" 10 minutes ago></small>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="profile-picture">
+                                    <img src="img/story7.jpg" alt="">
+                                </div>
+                                <div class="notification-body">
+                                    <b>jhon lew</b>liked your post
+                                    <small class="text-gry" 20 minutes ago></small>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="profile-picture">
+                                    <img src="img/story2.jpg" alt="">
+                                </div>
+                                <div class="notification-body">
+                                    <b>jhon lew</b>reacted your post
+                                    <small class="text-gry" 1 hour ago></small>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="profile-picture">
+                                    <img src="img/story1.jpg" alt="">
+                                </div>
+                                <div class="notification-body">
+                                    <b>jhon lew</b>accepted your friend request
+                                    <small class="text-gry" 2 hours ago></small>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="menu-item" id="message">
+                        <span><img src="icon/chat.png"></span>
+                        <small class="notfy-count nt" id="ntcount2">3</small>
+                        <h3>Message</h3>
+                    </a>
+                    <a class="menu-item ">
+                        <span><img src="icon/bookmark.png"></span>
+                        <h3>Bookmarks</h3>
+                    </a>
+                    <a class="menu-item ">
+                        <span><img src="icon/graph-up.png"></span>
+                        <h3>Analytics</h3>
+                    </a>
+                    <a class="menu-item " id="themeMenu">
+                        <span><img src="icon/palette.png"></span>
+                        <h3>Theme</h3>
+                    </a>
+                    <a class="menu-item ">
+                        <span><img src="icon/gear.png"></span>
+                        <h3>Seting</h3>
+                    </a>
+                    <!--  ....... Add Post ...... -->
+                    <label for="add-post" class="btn btn-primary btn-lg" id="create-lg">Create A Post</label>
+
+                </aside>
+            </div>
+
+            <!--     ...........MAIN MID.........-->
+            <div class="main-mid">
+                <div class="mid-container">
+                    <div class="storys">
+                        <div class="story-wrapper swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="story swiper-slide ">
+                                    <img src="" alt="">
+                                    <div class="profile-picture" id="my-profile-picture">
+                                        <img src="img/{{user.imageName}}">
+                                    </div>
+                                    <label for="add-story" class="add-story">
+                                        <small><i class="fa fa-add" id="upload"></i></small>
+                                        <p>Add your <br> story</p>
+                                    </label>
+                                    <input type="file" name="" accept="img/jpg, image.pgn, image/jpeg" id="add-story">
+                                </div>
+                                <div class="story swiper-slide">
+                                    <img src="img/story8.jpg" alt="">
+                                    <div class="profile-picture">
+                                        <img src="img/story1.jpg" alt="">
+                                    </div>
+                                    <p>jensen</p>
+                                </div>
+                                <div class="story swiper-slide">
+                                    <img src="img/story9.jpg" alt="">
+                                    <div class="profile-picture">
+                                        <img src="img/story2.jpg" alt="">
+                                    </div>
+                                    <p>thums </p>
+                                </div>
+                                <div class="story swiper-slide">
+                                    <img src="img/story10.jpg" alt="">
+                                    <div class="profile-picture">
+                                        <img src="img/story3.jpg" alt="">
+                                    </div>
+                                    <p>chen</p>
+                                </div>
+                                <div class="story swiper-slide">
+                                    <img src="img/story11.jpg" alt="">
+                                    <div class="profile-picture">
+                                        <img src="img/story4.jpg" alt="">
+                                    </div>
+                                    <p>wang </p>
+                                </div>
+                                <div class="story swiper-slide">
+                                    <img src="img/story12.jpg" alt="">
+                                    <div class="profile-picture">
+                                        <img src="img/story5.jpg" alt="">
+                                    </div>
+                                    <p>Jhon</p>
+                                </div>
+                                <div class="story swiper-slide">
+                                    <img src="img/story13.jpg" alt="">
+                                    <div class="profile-picture">
+                                        <img src="img/story6.jpg" alt="">
+                                    </div>
+                                    <p>Akshay</p>
+                                </div>
+                                <div class="story swiper-slide">
+                                    <img src="img/story14.jpg" alt="">
+                                    <div class="profile-picture">
+                                        <img src="img/story7.jpg" alt="">
+                                    </div>
+                                    <p>Rock</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="add-post input-post" id="postForm" action="/addtext" method="post">
+                        <div class="profile-picture" id="my-profile-picture">
+                            <img src="img/{{user.imageName}}">
+                        </div>
+                        <input type="text" name="content" placeholder="what's on your mind ?" id="add-post">
+                        <input type="hidden" name="firstname" value="{{user.firstname}}">
+                        <button type="submit" class="btn btn-primary">post</button>
+                    </form>
+                    <!--     ........feeds -->
+                    <div class="feeds">
+                        {{#if userText._id}}
+                        <div class="myfeed feed">
+                            <div class="feed-top">
+                                <div class="user">
+                                    <div class="profile-picture " id="my-profile-picture">
+                                        <img src="img/{{user.imageName}}">
+                                    </div>
+                                    <div class="info">
+                                        <h4>{{user.firstname}} {{user.lastname}}</h4>
+                                        <div class="time text-gry">
+                                            <small>CHINA, <span>JUST NOW</span></small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="edit">
+                                    <img src="icon/three-dots.png">
+                                    <ul class="edit-menu">
+                                        <form action="/deletetext" method="POST" name="delete">
+                                            <input type="hidden" name="fname" value="{{user.firstname}}">
+                                            <input type="hidden" name="id" value="{{userText._id}}">
+                                            <button type="submit">
+                                                <li><i class="fa fa-trash">Delete</i></li>
+                                            </button>
+                                        </form>
+                                    </ul>
+                                </span>
+                            </div>
+                            <div class="feed-img">
+                                <div class="title">
+                                    <h2>{{userText.content}}</h2>
+                                </div>
+                            </div>
+                            <div class="action-buttons">
+                                <div class="inter-action-button">
+                                    <span><i class="fa fa-heart"></i></span>
+                                    <span><i class="fa fa-comment-dots"></i></span>
+                                    <span><i class="fa fa-link"></i></span>
+                                </div>
+                                <div class="bookmark">
+                                    <span><i class="fa fa-bookmark"></i></span>
+                                </div>
+                            </div>
+                            <div class="liked-by">
+                                <span><img src="img/story3.jpg" alt=""></span>
+                                <span><img src="img/story4.jpg" alt=""></span>
+                                <span><img src="img/story5.jpg" alt=""></span>
+                                <p>Liked by <b>deniel rivar </b>and <b>105 others peoples</b> </p>
+                            </div>
+                            <div class="caption">
+                                <div class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, ex.
+                                </div>
+                                <p><b>angela rose</b>Lorem ipsum dolor sit, amet consectetur.
+                                    <span class="hash-teg">#lifestyle</span>
+                                </p>
+                            </div>
+                            <div class="comments text-gry">view all comments</div>
+                        </div>
+                        {{/if}}
+
+                        {{#if userPost._id}}
+                        <div class="myfeed feed">
+                            <div class="feed-top">
+                                <div class="user">
+                                    <div class="profile-picture " id="my-profile-picture">
+                                        <img src="img/{{user.imageName}}">
+                                    </div>
+                                    <div class="info">
+                                        <h4>{{user.firstname}} {{user.lastname}}</h4>
+                                        <div class="time text-gry">
+                                            <small>CHINA, <span>JUST NOW</span></small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="edit">
+                                    <img src="icon/three-dots.png">
+                                    <ul class="edit-menu">
+                                        <form action="/deletepost" method="POST" name="delete">
+                                            <input type="hidden" name="fname" value="{{user.firstname}}">
+                                            <input type="hidden" name="id" value="{{userPost._id}}">
+                                            <button type="submit">
+                                                <li><i class="fa fa-trash">Delete</i></li>
+                                            </button>
+                                        </form>
+                                    </ul>
+                                </span>
+                            </div>
+                            <div class="feed-img">
+                                <div class="title">
+                                    <h2>{{userPost.content}}</h2>
+                                </div>
+                                <img src="img/{{userPost.image}}" alt="">
+                            </div>
+                            <div class="action-buttons">
+                                <div class="inter-action-button">
+                                    <span><i class="fa fa-heart"></i></span>
+                                    <span><i class="fa fa-comment-dots"></i></span>
+                                    <span><i class="fa fa-link"></i></span>
+                                </div>
+                                <div class="bookmark">
+                                    <span><i class="fa fa-bookmark"></i></span>
+                                </div>
+                            </div>
+                            <div class="liked-by">
+                                <span><img src="img/story3.jpg" alt=""></span>
+                                <span><img src="img/story4.jpg" alt=""></span>
+                                <span><img src="img/story5.jpg" alt=""></span>
+                                <p>Liked by <b>deniel rivar </b>and <b>105 others peoples</b> </p>
+                            </div>
+                            <div class="caption">
+                                <div class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, ex.
+                                </div>
+                                <p><b>angela rose</b>Lorem ipsum dolor sit, amet consectetur.
+                                    <span class="hash-teg">#lifestyle</span>
+                                </p>
+                            </div>
+                            <div class="comments text-gry">view all comments</div>
+                        </div>
+                        {{/if}}
+                        <div class="feed">
+                            <div class="feed-top">
+                                <div class="user">
+                                    <div class="profile-picture">
+                                        <img src="img/story3.jpg">
+                                    </div>
+                                    <div class="info">
+                                        <h3>Chen</h3>
+                                        <div class="time text-gry">
+                                            <small>China, <span>1 hour ago</span></small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="edit">
+                                    <img src="icon/three-dots.png">
+                                </div>
+                            </div>
+                            <div class="feed-img">
+                                <img src="img/feed2.jpg" alt="">
+                            </div>
+                            <div class="action-buttons">
+                                <div class="inter-action-button">
+                                    <span><i class="fa fa-heart"></i></span>
+                                    <span><i class="fa fa-comment-dots"></i></span>
+                                    <span><i class="fa fa-link"></i></span>
+                                </div>
+                                <div class="bookmark">
+                                    <span><i class="fa fa-bookmark"></i></span>
+                                </div>
+                            </div>
+                            <div class="liked-by">
+                                <span><img src="img/story3.jpg" alt=""></span>
+                                <span><img src="img/story4.jpg" alt=""></span>
+                                <span><img src="img/story5.jpg" alt=""></span>
+                                <p>Liked by <b>deniel rivar </b>and <b>105 others peoples</b> </p>
+                            </div>
+                            <div class="caption">
+                                <div class="title">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim,
+                                    delectus!
+                                </div>
+                                <p><b>angela rose</b>Lorem ipsum dolor sit, amet consectetur.
+                                    <span class="hash-teg">#lifestyle</span>
+                                </p>
+                            </div>
+                            <div class="comments text-gry">view all comments</div>
+                        </div>
+                        <div class="feed">
+                            <div class="feed-top">
+                                <div class="user">
+                                    <div class="profile-picture">
+                                        <img src="img/story6.jpg">
+                                    </div>
+                                    <div class="info">
+                                        <h3>Akshay Kumar </h3>
+                                        <div class="time text-gry">
+                                            <small>India, <span>12 hour ago</span></small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="edit">
+                                    <img src="icon/three-dots.png">
+                                </div>
+                            </div>
+                            <div class="feed-img">
+                                <img src="img/feed1.jpg" alt="">
+                            </div>
+                            <div class="action-buttons">
+                                <div class="inter-action-button">
+                                    <span><i class="fa fa-heart"></i></span>
+                                    <span><i class="fa fa-comment-dots"></i></span>
+                                    <span><i class="fa fa-link"></i></span>
+                                </div>
+                                <div class="bookmark">
+                                    <span><i class="fa fa-bookmark"></i></span>
+                                </div>
+                            </div>
+                            <div class="liked-by">
+                                <span><img src="img/story3.jpg" alt=""></span>
+                                <span><img src="img/story4.jpg" alt=""></span>
+                                <span><img src="img/story5.jpg" alt=""></span>
+                                <p>Liked by <b>deniel rivar </b>and <b>105 others peoples</b> </p>
+                            </div>
+                            <div class="caption">
+                                <div class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, ex.
+                                </div>
+                                <p><b>angela rose</b>Lorem ipsum dolor sit, amet consectetur.
+                                    <span class="hash-teg">#lifestyle</span>
+                                </p>
+                            </div>
+                            <div class="comments text-gry">view all comments</div>
+                        </div>
+                        <div class="feed">
+                            <div class="feed-top">
+                                <div class="user">
+                                    <div class="profile-picture">
+                                        <img src="img/story2.jpg">
+                                    </div>
+                                    <div class="info">
+                                        <h3>Thums </h3>
+                                        <div class="time text-gry">
+                                            <small>India, <span>2 days ago</span></small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="edit">
+                                    <img src="icon/three-dots.png">
+                                </div>
+                            </div>
+                            <div class="feed-img">
+                                <div class="title">
+                                    <h2>Hello world, I'm Mr.Thums from UK. Currently, studying in America.</h2>
+                                </div>
+                            </div>
+                            <div class="action-buttons">
+                                <div class="inter-action-button">
+                                    <span><i class="fa fa-heart"></i></span>
+                                    <span><i class="fa fa-comment-dots"></i></span>
+                                    <span><i class="fa fa-link"></i></span>
+                                </div>
+                                <div class="bookmark">
+                                    <span><i class="fa fa-bookmark"></i></span>
+                                </div>
+                            </div>
+                            <div class="liked-by">
+                                <span><img src="img/story2.jpg" alt=""></span>
+                                <span><img src="img/story3.jpg" alt=""></span>
+                                <span><img src="img/story4.jpg" alt=""></span>
+                                <p>Liked by <b>deniel rivar </b>and <b>105 others peoples</b> </p>
+                            </div>
+                            <div class="caption">
+                                <div class="title">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis,
+                                    libero.
+                                </div>
+                                <p><b>angela rose</b>Lorem ipsum dolor sit, amet consectetur.
+                                    <span class="hash-teg">#lifestyle</span>
+                                </p>
+                            </div>
+                            <div class="comments text-gry">view all comments</div>
+                        </div>
+                        <div class="feed">
+                            <div class="feed-top">
+                                <div class="user">
+                                    <div class="profile-picture">
+                                        <img src="img/story4.jpg">
+                                    </div>
+                                    <div class="info">
+                                        <h3>Wang</h3>
+                                        <div class="time text-gry">
+                                            <small>Japan, <span>35 minutes ago</span></small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="edit">
+                                    <img src="icon/three-dots.png">
+                                </div>
+                            </div>
+                            <div class="feed-img">
+                                <img src="img/feed3.png" alt="">
+                            </div>
+                            <div class="action-buttons">
+                                <div class="inter-action-button">
+                                    <span><i class="fa fa-heart"></i></span>
+                                    <span><i class="fa fa-comment-dots"></i></span>
+                                    <span><i class="fa fa-link"></i></span>
+                                </div>
+                                <div class="bookmark">
+                                    <span><i class="fa fa-bookmark"></i></span>
+                                </div>
+                            </div>
+                            <div class="liked-by">
+                                <span><img src="img/story7.jpg" alt=""></span>
+                                <span><img src="img/story3.jpg" alt=""></span>
+                                <span><img src="img/story6.jpg" alt=""></span>
+                                <p>Liked by <b>deniel rivar </b>and <b>105 others peoples</b> </p>
+                            </div>
+                            <div class="caption">
+                                <div class="title">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis,
+                                    libero.
+                                </div>
+                                <p><b>angela rose</b>Lorem ipsum dolor sit, amet consectetur.
+                                    <span class="hash-teg">#lifestyle</span>
+                                </p>
+                            </div>
+                            <div class="comments text-gry">view all comments</div>
+                        </div>
+                        <div class="feed">
+                            <div class="feed-top">
+                                <div class="user">
+                                    <div class="profile-picture">
+                                        <img src="img/story7.jpg">
+                                    </div>
+                                    <div class="info">
+                                        <h3>Rock</h3>
+                                        <div class="time text-gry">
+                                            <small>Canada, <span>1 week ago</span></small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="edit">
+                                    <img src="icon/three-dots.png">
+                                </div>
+                            </div>
+                            <div class="feed-img">
+                                <img src="img/feed4.jpg" alt="">
+                            </div>
+                            <div class="action-buttons">
+                                <div class="inter-action-button">
+                                    <span><i class="fa fa-heart"></i></span>
+                                    <span><i class="fa fa-comment-dots"></i></span>
+                                    <span><i class="fa fa-link"></i></span>
+                                </div>
+                                <div class="bookmark">
+                                    <span><i class="fa fa-bookmark"></i></span>
+                                </div>
+                            </div>
+                            <div class="liked-by">
+                                <span><img src="img/story3.jpg" alt=""></span>
+                                <span><img src="img/story2.jpg" alt=""></span>
+                                <span><img src="img/story5.jpg" alt=""></span>
+                                <p>Liked by <b>deniel rivar </b>and <b>105 others peoples</b> </p>
+                            </div>
+                            <div class="caption">
+                                <div class="title">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim,
+                                    delectus!
+                                </div>
+                                <p><b>angela rose</b>Lorem ipsum dolor sit, amet consectetur.
+                                    <span class="hash-teg">#lifestyle</span>
+                                </p>
+                            </div>
+                            <div class="comments text-gry">view all comments</div>
+                        </div>
+                        <div class="feed">
+                            <div class="feed-top">
+                                <div class="user">
+                                    <div class="profile-picture">
+                                        <img src="img/story5.jpg">
+                                    </div>
+                                    <div class="info">
+                                        <h3>Jhon</h3>
+                                        <div class="time text-gry">
+                                            <small>Spain, <span>4 hour ago</span></small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="edit">
+                                    <img src="icon/three-dots.png">
+                                </div>
+                            </div>
+                            <div class="feed-img">
+                                <img src="img/feed5.jpg" alt="">
+                            </div>
+                            <div class="action-buttons">
+                                <div class="inter-action-button">
+                                    <span><i class="fa fa-heart"></i></span>
+                                    <span><i class="fa fa-comment-dots"></i></span>
+                                    <span><i class="fa fa-link"></i></span>
+                                </div>
+                                <div class="bookmark">
+                                    <span><i class="fa fa-bookmark"></i></span>
+                                </div>
+                            </div>
+                            <div class="liked-by">
+                                <span><img src="img/story7.jpg" alt=""></span>
+                                <span><img src="img/story2.jpg" alt=""></span>
+                                <span><img src="img/story6.jpg" alt=""></span>
+                                <p>Liked by <b>deniel rivar </b>and <b>105 others peoples</b> </p>
+                            </div>
+                            <div class="caption">
+                                <div class="title">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis,
+                                    libero.
+                                </div>
+                                <p><b>angela rose</b>Lorem ipsum dolor sit, amet consectetur.
+                                    <span class="hash-teg">#lifestyle</span>
+                                </p>
+                            </div>
+                            <div class="comments text-gry">view all comments</div>
+                        </div>
+                        <div class="feed">
+                            <div class="feed-top">
+                                <div class="user">
+                                    <div class="profile-picture">
+                                        <img src="img/story1.jpg">
+                                    </div>
+                                    <div class="info">
+                                        <h3>jensen</h3>
+                                        <div class="time text-gry">
+                                            <small>Bhutan, <span>7 Days ago</span></small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="edit">
+                                    <img src="icon/three-dots.png">
+                                </div>
+                            </div>
+                            <div class="feed-img">
+                                <img src="img/feed6.jpg" alt="">
+                            </div>
+                            <div class="action-buttons">
+                                <div class="inter-action-button">
+                                    <span><i class="fa fa-heart"></i></span>
+                                    <span><i class="fa fa-comment-dots"></i></span>
+                                    <span><i class="fa fa-link"></i></span>
+                                </div>
+                                <div class="bookmark">
+                                    <span><i class="fa fa-bookmark"></i></span>
+                                </div>
+                            </div>
+                            <div class="liked-by">
+                                <span><img src="img/story6.jpg" alt=""></span>
+                                <span><img src="img/story3.jpg" alt=""></span>
+                                <span><img src="img/story7.jpg" alt=""></span>
+                                <p>Liked by <b>deniel rivar </b>and <b>105 others peoples</b> </p>
+                            </div>
+                            <div class="caption">
+                                <div class="title">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim,
+                                    delectus!
+                                </div>
+                                <p><b>angela rose</b>Lorem ipsum dolor sit, amet consectetur.
+                                    <span class="hash-teg">#lifestyle</span>
+                                </p>
+                            </div>
+                            <div class="comments text-gry">view all comments</div>
+                        </div>
+                        <div class="feed">
+                            <div class="feed-top">
+                                <div class="user">
+                                    <div class="profile-picture">
+                                        <img src="img/story15.jpg">
+                                    </div>
+                                    <div class="info">
+                                        <h3>Mr.song</h3>
+                                        <div class="time text-gry">
+                                            <small>Korea, <span>19 hour ago</span></small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="edit">
+                                    <img src="icon/three-dots.png">
+                                </div>
+                            </div>
+                            <div class="feed-img">
+                                <img src="img/feed8.jpg" alt="">
+                            </div>
+                            <div class="action-buttons">
+                                <div class="inter-action-button">
+                                    <span><i class="fa fa-heart"></i></span>
+                                    <span><i class="fa fa-comment-dots"></i></span>
+                                    <span><i class="fa fa-link"></i></span>
+                                </div>
+                                <div class="bookmark">
+                                    <span><i class="fa fa-bookmark"></i></span>
+                                </div>
+                            </div>
+                            <div class="liked-by">
+                                <span><img src="img/story6.jpg" alt=""></span>
+                                <span><img src="img/story7.jpg" alt=""></span>
+                                <span><img src="img/story1.jpg" alt=""></span>
+                                <p>Liked by <b>deniel rivar </b>and <b>105 others peoples</b> </p>
+                            </div>
+                            <div class="caption">
+                                <div class="title">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim,
+                                    delectus!
+                                </div>
+                                <p><b>angela rose</b>Lorem ipsum dolor sit, amet consectetur.
+                                    <span class="hash-teg">#lifestyle</span>
+                                </p>
+                            </div>
+                            <div class="comments text-gry">view all comments</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--...............main right............-->
+            <div class="main-right">
+                <div class="messages" id="message-box">
+                    <div class="message-top">
+                        <h4>message</h4> <i class="fa fa-edit"></i>
+                    </div>
+                    <!-- .....search bar.........-->
+                    <div class="message-search-bar">
+                        <i class="fa fa-search"></i>
+                        <input type="search" placeholder="Search message" id="message-search">
+                    </div>
+                    <!-- .....mesage category.........-->
+                    <div class="message-category">
+                        <h6 class="active">Friends</h6>
+                        <h6 class="">Follows</h6>
+                        <h6 class="message-request">Request(4)</h6>
+                    </div>
+                    <!-- .....   message.........-->
+                    <div class="message">
+                        <div class="profile-picture">
+                            <div class="ac"></div>
+                            <img src="img/story6.jpg" alt="">
+                        </div>
+                        <div class="message-body">
+                            <h5>Akshay</h5>
+                            <p class="text-gry">Hello, bro..</p>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <div class="profile-picture">
+                            <img src="img/story3.jpg" alt="">
+                        </div>
+                        <div class="message-body">
+                            <h5>Chen</h5>
+                            <p class="text-gry">Are you busy ??.</p>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <div class="profile-picture">
+                            <div class="ac"></div>
+                            <img src="img/story2.jpg" alt="">
+                        </div>
+                        <div class="message-body">
+                            <h5>Thums</h5>
+                            <p class="text-gry">Let's celebrate new Year together.</p>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <div class="profile-picture">
+                            <img src="img/story4.jpg" alt="">
+                        </div>
+                        <div class="message-body">
+                            <h5>Wang</h5>
+                            <p class="text-gry">What are you doing Bro?.</p>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <div class="profile-picture">
+                            <div class="ac"></div>
+                            <img src="img/story5.jpg" alt="">
+                        </div>
+                        <div class="message-body">
+                            <h5>Jhon</h5>
+                            <p class="text-gry">Let's meet today.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- .........friend request........... -->
+                <div class="friend-requests">
+                    <h4>Request</h4>
+                    <div class="request">
+                        <div class="info">
+                            <div class="profile-picture">
+                                <img src="img/req1.jpg" alt="">
+                            </div>
+                            <div>
+                                <h5>Spider Man</h5>
+                                <p class="text-gry">
+                                    10 mutual firends
+                                </p>
+                                <small class="text-gry alert">You have accepted friend request</small>
+                            </div>
+                        </div>
+                        <div class="action">
+                            <div class="btn btn-primary" id="Accept">
+                                Accept
+                            </div>
+                            <div class="btn btn-danger" id="Delete">
+                                Delete
+                            </div>
+                        </div>
+                    </div>
+                    <div class="request">
+                        <div class="info">
+                            <div class="profile-picture">
+                                <img src="img/req2.jpg" alt="">
+                            </div>
+                            <div>
+                                <h5>Yang Yang</h5>
+                                <p class="text-gry">
+                                    10 mutual firends
+                                </p>
+                                <small class="text-gry alert">You have accepted friend request</small>
+                            </div>
+                        </div>
+                        <div class="action">
+                            <div class="btn btn-primary" id="Accept">
+                                Accept
+                            </div>
+                            <div class="btn btn-danger" id="Delete">
+                                Delete
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!--     ..........start PopUps Area......-->
+    <div class="popup profile-popup">
+        <div>
+            <div class="popup-box profile-popup-box">
+                {{!-- {{#with user}} --}}
+                <a class="profile">
+                    <div class="profile-handle">
+                        <h4>{{user.firstname}} {{user.lastname}}</h4>
+                        <p class="text-gry">@{{user.firstname}}{{user.lastname}}</p>
+                    </div>
+                </a>
+                {{!-- {{/with}} --}}
+                <div id="my-profile-picture">
+                    {{#if user}}
+                    <img src="img/{{user.imageName}}">
+
+                    {{else}}
+
+                    {{/if}}
+                </div>
+                {{!-- {{#with}} --}}
+                <form action="/update-profile-image" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="userId" value="{{user._id}}">
+                    <input type="hidden" name="firstName" value="{{user.firstname}}">
+                    <input type="hidden" name="lastName" value="{{user.lastname}}">
+                    <label for="profile-upload" class="btn btn-primary btn-lg">Update Profile Picture</label>
+                    <input type="file" accept="img/jpg, image.pgn, image/jpeg" id="profile-upload" name="profileImage">
+                    <button type="submit" class="btn btn-primary btn-lg" style="background:green">Save Profile
+                        Picture</button>
+                </form>
+                {{!-- {{/with}} --}}
+
+                <!-- Logout button -->
+                <form action="/logout" method="get">
+                    <button type="submit" class="btn btn-primary btn-lg" style="width: 100px;background:red">LogOut
+                    </button>
+                </form>
+            </div>
+            <span class="close"><i class="fa fa-close"></i></span>
+        </div>
+    </div>
+
+    <div class="popup add-post-popup">
+        <div>
+            <form action="/addingpost" method="post" class="popup-box add-post-pop" id="popupForm"
+                enctype="multipart/form-data">
+                <h1>Add New Post</h1>
+                <div class="row post-title">
+                    <label>Title</label>
+                    <input type="hidden" name="firstname" value="{{user.firstname}}">
+                    <input type="text" placeholder="what's on your mind ?" id="add-post" name="content">
+                </div>
+                <div class="row post-img">
+                    <img src="" id="postImg">
+                    <label for="feed-pic-upload" class="feed-upload-button">
+                        <span><i class="fa fa-add"></i></span>Update A Picture
+                    </label>
+                    <input type="file" accept="img/jpg, image.pgn, image/jpeg" id="feed-pic-upload" name="feedimage">
+                    <input type="submit" class="btn btn-primary btn-lg" value="Add Post">
+                </div>
+            </form>
+            <span class="close"><i class="fa fa-close"></i></span>
+        </div>
+    </div>
+    <!--     ..........them customize start......-->
+    <div class="popup theme-customize">
+        <div>
+            <div class="popup-box theme-customize-popup-box">
+                <h1>CUSTOMIZE YOUR SITE</h1>
+                <p class="text-gry">Manage your Font, Color and Background</p>
+
+                <!--     ..........FONT-SIZE......-->
+                <div class="font-siz">
+                    <h4>Font Size</h4>
+                    <div>
+                        <div>
+                            <h6>Aa</h6>
+                        </div>
+                        <div class="choose-font-size">
+                            <span class="font-size-1"></span>
+                            <span class="font-size-2 active"></span>
+                            <span class="font-size-3"></span>
+                            <span class="font-size-4"></span>
+                            <span class="font-size-5"></span>
+                        </div>
+                        <div>
+                            <h3>Aa</h3>
+                        </div>
+                    </div>
+                </div>
+                <!-- ....................... color.........-->
+                <div class="colors">
+                    <h4>color</h4>
+                    <div class="choose-color">
+                        <span class="color-1 active"></span>
+                        <span class="color-2"></span>
+                        <span class="color-3"></span>
+                        <span class="color-4"></span>
+                        <span class="color-5"></span>
+                    </div>
+                </div>
+
+                <!-- ....................... BACKGROUND.........-->
+                <div class="background">
+                    <h4>background</h4>
+                    <div class="choose-bg">
+                        <div class="bg1 active">
+                            <span></span>
+                            <h5>Light</h5>
+                        </div>
+                        <div class="bg2">
+                            <span></span>
+                            <h5>dark</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span class="close"><i class="fa fa-close"></i></span>
+    </div>
+</body>
+<script src="/js/script.js" defer></script>
+
+</html>

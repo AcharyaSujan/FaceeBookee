@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        body {
+            background-image: url('/img/background.jpg');
+        }
+
+        .form-form {
+            text-align: center;
+        }
+
+        .head1 {
+            color: rgb(200, 18, 18);
+            text-align: center;
+            line-height: 50px;
+            font-size: 30px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .table {
+            font-family: sans-serif;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 20px;
+            font-size: 15px;
+            font-weight: bold;
+            font-style: italic;
+            color: white;
+
+        }
+
+        input[type=text],
+        input[type=email],
+        input[type=password] {
+            width: 250px;
+            height: 2em;
+            margin: 3px;
+            text-align: center;
+        }
+
+        input[type=radio] {
+            width: 25px;
+            height: 2.5em;
+            margin: 5px;
+            margin-left: 25px;
+        }
+
+        input[type=submit] {
+            width: 200px;
+            height: 2.5em;
+
+        }
+
+        input[type=submit]:hover {
+            background-color: #95a4b3;
+        }
+
+        @media(max-width:1300px) {
+
+            .form-form {
+                margin-top: 60px;
+            }
+        }
+
+        @media(max-width:991px) {
+
+            .form-form {
+                margin-top: 60px;
+            }
+        }
+
+        @media(max-width:573px) {
+            .form-form {
+                margin-top: 50px;
+                float: left;
+            }
+
+            .head1 {
+                line-height: 30px;
+                font-size: 20px;
+            }
+
+            input[type=email],
+            input[type=text],
+            input[type=submit],
+            input[type=password] {
+                width: 100px;
+            }
+
+            input[type=radio] {
+                width: 18px;
+                margin: 0px;
+            }
+
+            button {
+                width: 100px;
+            }
+        }
+    </style>
+    <div class="form-form">
+        <h2 class="head1">Registration Form for FaceeBookee</h2>
+        <form action="/register" method="post">
+            <table class="table">
+                <tr>
+                    <td>
+                        First Name :
+                    </td>
+                    <td>
+                        <input type="text" name="firstname" placeholder="First  Name *" value="" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Last Name :
+                    </td>
+                    <td>
+                        <input type="text" name="lastname" placeholder="Last  Name *" value="" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Email :
+                    </td>
+                    <td>
+                        <input type="email" name="email" placeholder="Email  Address *" value="" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Gender :
+                    </td>
+                    <td>
+                        <input type="radio" name="gender" value="male" required="required">Male
+                        <input type="radio" name="gender" value="female" required="required">Female
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Your Age :
+                    </td>
+                    <td>
+                        <input type="text" name="age" placeholder=" Age *" value="" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Phone Num :
+                    </td>
+                    <td>
+                        <input type="text" minlength="10" maxlength="10" name="phone" placeholder="Phone Number *"
+                            id="phone" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Password :
+                    </td>
+                    <td>
+                        <input type="password" name="password" placeholder="password *" value="" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Confirmed password :
+                    </td>
+                    <td>
+                        <input type="password" name="confirmpassword" placeholder="Confirmed password *" value=""
+                            required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Register">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+
+</html>
